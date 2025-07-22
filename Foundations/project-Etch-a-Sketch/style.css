@@ -8,10 +8,6 @@
     border-color: black;
 }
 
-#container>div{
-    height
-}
-
 .square {
     width: 25px;
     height: 25px;
@@ -20,4 +16,8 @@
     border-width: 1px;
     border-style: solid;
     border-color: black;
+}
+
+.filled {
+    background-color: black;
 }
