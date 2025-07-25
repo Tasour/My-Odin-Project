@@ -20,8 +20,12 @@ body {
 
 #display {
     background-color: lightgray;
-    height: 50px;
+    min-height: 20px;
     width: 200px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
 }
 
 #keyboard {
