@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* 100% of viewport height */
+    width: 100vw;   /* 100% of viewport width */
+}
+
+#container{
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eee;
+
+}
+
+#display {
+    background-color: lightgray;
+    height: 50px;
+    width: 200px;
+}
+
+#keyboard {
+    display: flex;
+    margin-top: 20px;
+    
+}
+
+#numbers {
+  width: 125px;
+  display: grid;
+  grid-template-columns: repeat(3);
+  grid-template-rows: repeat(4);
+  /* gap: 0.5em; */
+  direction: rtl;
+}
+
+#numbers button:last-child {
+  grid-row: 4;
+  grid-column: 1;
+}
+
+#numbers .zero {
+  grid-row: 4;
+  grid-column: 2 / 4; /* spans columns 2 and 3 */
+  direction: ltr;      /* so '0' is not reversed */
+}
+
+#operators {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    width: 75px;
+}
+
+
+button {
+  font-size: 1.5em;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+button:hover{
+    background-color: darkgray;
+}

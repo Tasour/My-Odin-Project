@@ -35,21 +35,28 @@ let number_a;
 let operator;
 let number_b
 
-let keyboard_div = document.getElementById("keyboard");
-
-for (let index = 0; index < 10; index++) {
-    let key = document.createElement('div'); // Create element
+let numbers_div = document.getElementById("numbers");
+for (let index = 9; index >= 0; index--) {
+    let key = document.createElement('button'); // Create element
     key.innerHTML = index
-    key.classList.add('key'); // Add class
-    keyboard_div.appendChild(key); // Append to container
+    if (index === 0) {
+        key.classList.add('zero'); // Add class    
+    }
+    numbers_div.appendChild(key); // Append to container
 }
 
+let operators_div = document.getElementById("operators");
 operations_array = ["+", "-", "x", "/", "=", "Clear"]
 for (let index = 0; index < operations_array.length; index++) {
-    let key = document.createElement('div'); // Create element
+    let key = document.createElement('button'); // Create element
     let op = operations_array[index];
     key.innerHTML = op
-    key.classList.add('operation_key'); // Add class
-    keyboard_div.appendChild(key); // Append to container
+    //key.classList.add('operation_key'); // Add class
+    if (op === "=") {
+        numbers_div.appendChild(key);
+    }
+    else{
+        operators_div.appendChild(key); // Append to container
+    }
 }
 
