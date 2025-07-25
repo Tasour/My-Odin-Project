@@ -83,15 +83,19 @@ for (let index = 9; index >= 0; index--) {
     let key = document.createElement('button'); // Create element
     key.innerHTML = index
     key.onclick = () => {
-        display.push(index)
-        if (number_a === "") {
-            number_a = index;
+        // If display is empty, or last is an operator, start new number
+        if (
+            display.length === 0 ||
+            isOperator(display[display.length - 1])
+        ) {
+            display.push(index.toString());
         } else {
-            number_b = index;
+            // If last entry is a number, append the new digit to it
+            display[display.length - 1] += index.toString();
         }
+        updateDisplay();
+    };
 
-        updateDisplay()
-    }
     if (index === 0) {
         key.classList.add('zero'); // Add class    
     }
